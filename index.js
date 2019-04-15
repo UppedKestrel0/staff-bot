@@ -76,7 +76,8 @@ bot.on("message", async message => {
     .addField("Command 5", "!avatar | Sends your discord avatar in the channel")
     .addField("Command 6", "!cat | Sends an image of a cat")
     .addField("Command 7", "!dog | Sends an image of a dog")
-    .addField("Command 8", "!report <user> {reason} | Reports a user for the specified reason");
+    .addField("Command 8", "!report <user> {reason} | Reports a user for the specified reason")
+    .addField("Command 9", "!suggest <suggestion> | Adds a suggestion to the Suggestion Channel");
 
     message.delete().catch(O_o=> {});
 
