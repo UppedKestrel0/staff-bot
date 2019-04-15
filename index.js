@@ -112,24 +112,6 @@ bot.on("message", async message => {
     message.delete().catch(O_o=> {});
     
     return message.channel.send(reply);
-  }
-  if(cmd === `${prefix}suggest`){
-    let suggestion = args.slice(0).join(" ");
-    let emoji1 = message.guild.emojis.find(`name`, "white_check_mark");
-    let emoji2 = message.guild.emojis.find(`name`, "negative_squared_cross_mark");
-    
-    let suggestEmbed = new Discord.RichEmbed()
-    .setTitle("**NEW SUGGESTION**")
-    .setColor("#f2f215")
-    .addField("__Suggestion__", args)
-    .addField("__Author__", `${message.author}`);
-
-    suggestEmbed.react(emoji1);
-    suggestEmbed.react(emoji2);
-    let suggestionChannel = message.guild.channels.find(`name`, "suggestions");
-    message.delete().catch(O_o=> {});
-
-    return suggestionChannel.send(suggestEmbed);
   };
 
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
