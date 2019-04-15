@@ -115,13 +115,14 @@ bot.on("message", async message => {
   if(cmd === `${prefix}suggest`){
     let suggestion = args.slice(0).join(" ");
     
-    let suggestEmbed = new Discord.RichEmbed
-    .setTitle("**NEW SUGGESTION")
+    let suggestEmbed = new Discord.RichEmbed()
+    .setTitle("**NEW SUGGESTION**")
     .setColor("#f2f215")
     .addField("__Suggestion__", args)
-    .addField("__Author__", message.author.id);
+    .addField("__Author__", `${message.author}`);
 
     let suggestionChannel = message.guild.channels.find(`name`, "suggestions");
+    message.delete().catch(O_o=> {});
 
     return suggestionChannel.send(suggestEmbed);
   };
