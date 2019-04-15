@@ -13,6 +13,7 @@ module.exports.run = async(bot, message, args) => {
     .addField("__Author__", `${message.author.id}`);
 
     let suggestionChannel = message.guild.channels.find(`name`, "suggestions");
+    message.delete().catch(O_o=> {});
     
     suggestionChannel.send(suggestionEmbed).then(async msg => {
 
