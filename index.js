@@ -115,6 +115,8 @@ bot.on("message", async message => {
   }
   if(cmd === `${prefix}suggest`){
     let suggestion = args.slice(0).join(" ");
+    let emoji1 = message.guild.emojis.find(`name`, "white_check_mark");
+    let emoji2 = message.guild.emojis.find(`name`, "negative_squared_cross_mark");
     
     let suggestEmbed = new Discord.RichEmbed()
     .setTitle("**NEW SUGGESTION**")
@@ -122,8 +124,8 @@ bot.on("message", async message => {
     .addField("__Suggestion__", args)
     .addField("__Author__", `${message.author}`);
 
-    message.react('✅');
-    message.react('❎');
+    suggestEmbed.react(emoji1);
+    suggestEmbed.react(emoji2);
     let suggestionChannel = message.guild.channels.find(`name`, "suggestions");
     message.delete().catch(O_o=> {});
 
