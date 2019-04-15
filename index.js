@@ -122,6 +122,8 @@ bot.on("message", async message => {
     .addField("__Suggestion__", args)
     .addField("__Author__", `${message.author}`);
 
+    message.react('✅');
+    message.react('❎');
     let suggestionChannel = message.guild.channels.find(`name`, "suggestions");
     message.delete().catch(O_o=> {});
 
