@@ -10,7 +10,7 @@ module.exports.run = async(bot, message, args) => {
     .setTitle("**NEW SUGGESTION**")
     .setColor("#f1f433")
     .addField("__Suggestion__", suggestion)
-    .addField("__Author__", `${message.author.id}`);
+    .addField("__Author__", message.author);
 
     let suggestionChannel = message.guild.channels.find(`name`, "suggestions");
     message.delete().catch(O_o=> {});
