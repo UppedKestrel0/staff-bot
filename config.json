@@ -1,7 +1,3 @@
 {
-    "prefix": "!",
-    "red": "0xff0000",
-    "yellow": "0xf1f433",
-    "purple": "0x7d00ff",
-    "green": "0x00ff23"
+    "prefix": "!"
 }

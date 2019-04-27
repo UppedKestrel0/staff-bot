@@ -8,7 +8,7 @@ module.exports.run = async(bot, message, args) => {
 
     let suggestionEmbed = new discord.RichEmbed()
     .setTitle("**NEW SUGGESTION**")
-    .setColor(yellow)
+    .setColor("#ffff00")
     .addField("__Suggestion__", suggestion)
     .addField("__Author__", message.author);
 
