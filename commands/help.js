@@ -19,6 +19,18 @@ module.exports.run = async(bot, message, args) => {
 
     return message.author.sendMessage(helpembed);
 
+    let user = message.author
+    if(user.hasPermission("MANAGE_MESSAGES"))
+        let staffembed = new Discord.RichEmbed()
+        .setTitle("**Staff Commands**")
+        .setColor("#008906")
+        .addField("Command 1", "!warn <user> (reason) | Warns specified player for specified reason")
+        .addField("Command 2", "!mute <user> {time} (reason) | Mutes specified player for specified time and reason")
+        .addField("Command 3", "!ban <user> (reason) | Bans specified player for specified reason")
+        .addField("Command 4", "!kick <user> (reason) | Kicks specified user for specified reason")
+        .addField("Command 5", "!purge <amount> | Deletes the specified amount of messages");
+       
+    return message.author.sendMessage(staffembed);
 };
 
 module.exports.help = {
